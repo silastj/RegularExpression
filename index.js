@@ -1,5 +1,4 @@
-//podemos usar no site
-//https://regexr.com/
+
 
 
 //OBS=> BUSCA E SUBSTITUICOES DE PADROES EM STRINGS
@@ -36,11 +35,26 @@ while(novo.test(paragrafo)){
 }
 // USANDO O EXEC
 
-// const titulo = "JavaScript, TypeScript, CoffeScript";
+const titulo = "JavaScript, TypeScript, CoffeScript";
 const newR = /\w+/g;
+const newRR = /\w+/;
 let regexpResult;
 while((regexpResult = newR.exec(paragrafo)) !== null) {
     console.log(regexpResult)
 }
 
+const reSul = paragrafo.match(newR);
+console.log(reSul);
 
+const reSulRR = titulo.match(newRR);
+console.log(reSulRR);
+
+
+//TROCANDO O LI PARA DIV
+
+const tags = `<ul><li>Item1</li><li>Item2</li></ul>`;
+
+const tgs = /(?<=<\/?)\w+/g;
+
+const tagsR = tags.replace(tgs, 'div');
+console.log(tagsR);
